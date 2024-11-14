@@ -1,0 +1,27 @@
+<mat-toolbar class="custom-toolbar">
+  
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuCiudad" style="color: white">
+      <mat-icon>menu</mat-icon>Ciudad
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuFauna" style="color: white">
+      <mat-icon>menu</mat-icon>Fauna
+    </button>
+    <button mat-button [matMenuTriggerFor]="menuFlora" style="color: white">
+      <mat-icon>menu</mat-icon>Flora
+    </button>
+  </div>
+</mat-toolbar>
+<mat-menu #menuCiudad="matMenu">
+  <button mat-menu-item routerLink="/ciudades">Listar ciudades</button>
+  <button mat-menu-item routerLink="/ciudades/nuevo">Registrar ciudades</button>
+</mat-menu>
+<mat-menu #menuFauna="matMenu">
+  <button mat-menu-item routerLink="/faunas">Listar faunas</button>
+  <button mat-menu-item routerLink="/faunas/nuevo">Registrar faunas</button>
+</mat-menu>
+<mat-menu #menuFlora="matMenu">
+  <button mat-menu-item routerLink="/floras">Listar floras</button>
+  <button mat-menu-item routerLink="/floras/nuevo">Registrar floras</button>
+</mat-menu>
+<router-outlet></router-outlet>

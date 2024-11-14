@@ -1,0 +1,33 @@
+<div class="main-container">
+  <!-- Panel de Información -->
+  <div class="info-panel">
+    <input type="text" placeholder="Filter" />
+    <button>Clear</button>
+    <div *ngFor="let city of cities" class="info-item">
+      <h3>{{ city.nameCity }}</h3>
+      <p>{{ city.provinceCity }}, {{ city.departmentCity }}</p>
+      <button (click)="showCityDetails(city)">Mostrar</button>
+    </div>
+  </div>
+
+  <!-- Contenedor del Mapa de Google -->
+  <div class="map-container">
+    <google-map
+      mapId="5dbf226b9ef86a67"
+      height="100%"
+      width="100%"
+      [center]="center"
+      [zoom]="zoom">
+      
+      <!-- Marcadores en el Mapa -->
+      <map-advanced-marker *ngFor="let city of cities"
+        [position]="{ lat: city.latitudeCity, lng: city.lengthCity }">
+        <div class="marker-content">
+          <h4>{{ city.nameCity }}</h4>
+          <p>{{ city.provinceCity }}, {{ city.departmentCity }}</p>
+        </div>
+      </map-advanced-marker>
+      
+    </google-map>
+  </div>
+</div>

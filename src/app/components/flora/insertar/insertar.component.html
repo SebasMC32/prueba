@@ -1,0 +1,56 @@
+<div class="title-container">
+    <div class="container" style="text-align: center;margin:5%">
+        <h1>Registro de Faunas</h1>
+    </div>
+    <div class="container" style="text-align: center">
+        <form [formGroup]="form" (submit)="insertar()">
+
+            <mat-form-field class="example-full-width" *ngIf="edicion">
+                <mat-label>Código</mat-label>
+                <input matInput formControlName="hcodigo" readonly="true" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Flora</mat-label>
+                <input matInput placeholder="Ejem. Lima" formControlName="hnombre" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Especie</mat-label>
+                <input matInput placeholder="Ejem. Lima" formControlName="hespecie" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Familia</mat-label>
+                <input matInput placeholder="Ejem. Lima" formControlName="hfamilia" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Latitud</mat-label>
+                <input matInput placeholder="Ejem. Lima" formControlName="hlatitud" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Longitud</mat-label>
+                <input matInput placeholder="Ejem. Lima" formControlName="hlongitud" />
+            </mat-form-field>
+            <br />
+
+            <mat-form-field class="example-full-width">
+                <mat-label>Estado</mat-label>
+                <input matInput placeholder="Ejem. Lima" formControlName="hestado" />
+            </mat-form-field>
+            <br />
+
+
+            <div style="text-align: center;">
+                <button mat-flat-button color="warn">Registrar</button>
+            </div>
+        </form>
+    </div>
+</div>
